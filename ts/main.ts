@@ -16,12 +16,15 @@ function main():void{
     validateTxtBox("last-name", "Last name is required");
 
     // Validate date
-    let dobBox =
-        <HTMLInputElement>document.getElementById("dob");
+    checkValidDate();
+}
+
+function checkValidDate() {
+    let dobBox = <HTMLInputElement>document.getElementById("dob");
     let dob = dobBox.value;
-    if(isValidDate(dob) == false){
-        let errSpan = dobBox.nextElementSibling;
-        errSpan.innerHTML = "Format should be mm/dd/yyyy"
+    if (!isValidDate(dob)) {
+        let errSpan = document.getElementById("dob-span");
+        errSpan.innerHTML = "Format should be mm/dd/yyyy";
     }
 }
 

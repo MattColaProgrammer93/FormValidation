@@ -6,10 +6,13 @@ function main() {
     resetErrorMessages();
     validateTxtBox("first-name", "First name is required");
     validateTxtBox("last-name", "Last name is required");
+    checkValidDate();
+}
+function checkValidDate() {
     var dobBox = document.getElementById("dob");
     var dob = dobBox.value;
-    if (isValidDate(dob) == false) {
-        var errSpan = dobBox.nextElementSibling;
+    if (!isValidDate(dob)) {
+        var errSpan = document.getElementById("dob-span");
         errSpan.innerHTML = "Format should be mm/dd/yyyy";
     }
 }
