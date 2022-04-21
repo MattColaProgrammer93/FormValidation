@@ -3,22 +3,18 @@ window.onload = function () {
     formBtn.onclick = main;
 };
 function main() {
-    validateFirstNameTxt();
-    validateLastNameTxt();
+    validateTxtBox("first-name", "First name is required");
+    validateTxtBox("last-name", "Last name is required");
 }
-function validateLastNameTxt() {
-    var lastNameBox = document.getElementById("last-name");
-    var lName = lastNameBox.value;
-    if (lName == "") {
-        var errSpan = lastNameBox.nextElementSibling;
-        errSpan.innerText = "Last name is required";
+function validateTxtBox(id, errMsg) {
+    var txtBox = document.getElementById(id);
+    var txtBoxValue = txtBox.value;
+    if (txtBoxValue == "") {
+        var errSpan = txtBox.nextElementSibling;
+        errSpan.innerText = errMsg;
+        return false;
     }
-}
-function validateFirstNameTxt() {
-    var firstNameBox = document.getElementById("first-name");
-    var fName = firstNameBox.value;
-    if (fName == "") {
-        var errSpan = firstNameBox.nextElementSibling;
-        errSpan.innerText = "First name is required";
+    else {
+        return true;
     }
 }
