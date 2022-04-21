@@ -2,6 +2,10 @@ form > span{
     color: red;
 }
 
+body {
+    background-color:lightslategray;
+}
+
 input[type=text]{
     margin-bottom: 1em;
 }
@@ -11,6 +15,7 @@ form > label{
     text-align: right;
     width: 50%;
     margin-right: 2em;
+    font-family: Arial;
 }
 
 form > button{
@@ -27,12 +32,21 @@ input[type=text]:hover{
     background-color:lightblue;
 }
 
+#title{
+    margin-left: 35%;
+    font-family: Verdana;
+}
+
 @media only screen and (max-width: 600px){
     form > label{
         text-align:left;
     }
 
     form > button{
+        margin-left: 0%;
+    }
+
+    #title{
         margin-left: 0%;
     }
 }
