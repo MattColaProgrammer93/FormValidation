@@ -6,6 +6,15 @@ function main() {
     resetErrorMessages();
     validateTxtBox("first-name", "First name is required");
     validateTxtBox("last-name", "Last name is required");
+    var dobBox = document.getElementById("dob");
+    var dob = dobBox.value;
+    if (isValidDate(dob) == false) {
+        dobBox.nextElementSibling.innerHTML = "Invalid Format";
+    }
+}
+function isValidDate(input) {
+    var datePattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g;
+    return datePattern.test(input);
 }
 function resetErrorMessages() {
     var allSpans = document.querySelectorAll("form span");

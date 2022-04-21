@@ -14,6 +14,22 @@ function main():void{
 
     // Last Name Validation
     validateTxtBox("last-name", "Last name is required");
+
+    // Validate date
+    let dobBox =
+        <HTMLInputElement>document.getElementById("dob");
+    let dob = dobBox.value;
+    if(isValidDate(dob) == false){
+        let errSpan = dobBox.nextElementSibling;
+        errSpan.innerHTML = "Format should be mm/dd/yyyy"
+    }
+}
+
+function isValidDate(input:string):boolean{
+    // mm/dd/yyyy
+    // \d{1,2}\/\d{1,2}\/\d{4}
+    let datePattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g
+    return datePattern.test(input);
 }
 
 /**
