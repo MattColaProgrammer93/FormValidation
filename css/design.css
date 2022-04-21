@@ -1,3 +1,38 @@
 form > span{
     color: red;
 }
+
+input[type=text]{
+    margin-bottom: 1em;
+}
+
+form > label{
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+    margin-right: 2em;
+}
+
+form > button{
+    margin-left: 50%;
+    width: 100px;
+    height: 40px;
+}
+
+form > button:hover{
+    background-color:lightblue;
+}
+
+input[type=text]:hover{
+    background-color:lightblue;
+}
+
+@media only screen and (max-width: 600px){
+    form > label{
+        text-align:left;
+    }
+
+    form > button{
+        margin-left: 0%;
+    }
+}
