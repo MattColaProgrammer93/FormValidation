@@ -9,7 +9,8 @@ function main() {
     var dobBox = document.getElementById("dob");
     var dob = dobBox.value;
     if (isValidDate(dob) == false) {
-        dobBox.nextElementSibling.innerHTML = "Invalid Format";
+        var errSpan = dobBox.nextElementSibling;
+        errSpan.innerHTML = "Format should be mm/dd/yyyy";
     }
 }
 function isValidDate(input) {
